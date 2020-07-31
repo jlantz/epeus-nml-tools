@@ -1,0 +1,3 @@
+[run]
+source = epeus_nml_tools
+omit = epeus_nml_tools/test*

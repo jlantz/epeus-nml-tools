@@ -1,0 +1,55 @@
+{% extends "layout.jinja2" %}
+
+{% block content %}
+{% if form %}
+{{ form | safe }}
+{% else %}
+<h2>New Playlist: {{ request.session.name }}</h2>
+<a id="download-button" class="btn btn-primary" href="#">
+  <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+  <span class="button-text">Download Playlist</span>
+</a>
+
+<h2>Search Playlists</h2>
+<ul>
+{% for playlist in request.session.search_playlists %}
+  <li>{{ playlist }}</li>
+{% endfor %}
+</ul>
+
+<h2>Exclude Playlists</h2>
+<ul>
+{% for playlist in request.session.exclude_playlists %}
+  <li>{{ playlist }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}a
+
+{% block extra_js %}
+<script>
+    $(document).ready(function () {
+        console.log("Loaded")
+        $('#download-button').on('click', function (e) {
+            if ($("#download-button").prop("disabled") == true) {
+                return;
+            }
+            e.preventDefault();
+            console.log("Clicked #download-playlist");
+            $("#download-button").prop("disabled", true);
+            $("#download-button span.spinner-border").removeClass("d-none");
+            $("#download-button span.button-text").text("Processing...");
+            window.location = "/unplayed/download";
+            function wait_for_download() {
+                if (document.cookie.includes("download_complete=") != true) {
+                    setTimeout(wait_for_download, 1000);
+                }
+            }
+            wait_for_download();
+            $("#download-button span.spinner-border").addClass("d-none");
+            $("#download-button span.button-text").text("Playlist Downloaded!");
+        });
+    });
+</script>
+{% endblock extra_js %}
