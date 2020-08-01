@@ -2,21 +2,6 @@ from uuid import uuid4
 from lxml import etree
 from traktor_nml_utils import TraktorCollection
 
-collection = TraktorCollection("../../Native Instruments/Traktor 3.2.1/collection.nml")
-output = "unplayed.nml"
-
-search_playlists = [
-    "Epeus/--- 2018",
-    "Epeus/--- 2019",
-    "Epeus/--- 2020",
-]
-exclude_playlists = [
-    "Epeus/- Bindiism 2",
-    "Epeus/- Bindiism 3",
-    "Epeus/- Bindiism 4",
-    "Epeus/- Bindiism 5",
-]
-
 
 class UnplayedPlaylist:
     def __init__(self, collection_path: str):
