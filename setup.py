@@ -9,7 +9,9 @@ with open(os.path.join(here, "CHANGES.txt")) as f:
     CHANGES = f.read()
 
 requires = [
+    "cherrypy",
     "deform",
+    "pastescript",
     "plaster_pastedeploy",
     "pyramid",
     "pyramid_deform",
