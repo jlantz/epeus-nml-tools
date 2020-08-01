@@ -1,0 +1,27 @@
+Chameleon==3.8.1
+colander==1.7.0
+deform==2.0.10
+hupper==1.10.2
+iso8601==0.1.12
+Jinja2==2.11.2
+lxml==4.5.2
+Mako==1.1.3
+MarkupSafe==1.1.1
+PasteDeploy==2.1.0
+peppercorn==0.6
+plaster==1.0
+plaster-pastedeploy==0.7
+Pygments==2.6.1
+pyramid==1.10.4
+pyramid-debugtoolbar==4.6.1
+pyramid-deform==0.2
+pyramid-jinja2==2.8
+pyramid-mako==1.1.0
+repoze.lru==0.7
+traktor-nml-utils @ git+https://github.com/jlantz/traktor-nml-utils@8b6ae53cf824d890f801e25a4350d931869320de
+translationstring==1.4
+venusian==3.0.0
+waitress==1.4.4
+WebOb==1.8.6
+zope.deprecation==4.4.0
+zope.interface==5.1.0
