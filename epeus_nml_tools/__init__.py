@@ -1,7 +1,7 @@
+import os
 from pyramid.config import Configurator
 from pyramid.session import SignedCookieSessionFactory
 
-my_session_factory = SignedCookieSessionFactory("itsaseekreet")
 
 
 def main(global_config, **settings):
@@ -11,5 +11,6 @@ def main(global_config, **settings):
         config.include("pyramid_jinja2")
         config.include(".routes")
         config.scan()
-        config.set_session_factory(my_session_factory)
+        session_factory = SignedCookieSessionFactory(os.environ.get("COOKIE_SECRET")
+        config.set_session_factory(session_factory)
     return config.make_wsgi_app()
