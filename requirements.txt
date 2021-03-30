@@ -11,7 +11,7 @@ PasteDeploy==2.1.0
 peppercorn==0.6
 plaster==1.0
 plaster-pastedeploy==0.7
-Pygments==2.6.1
+Pygments==2.7.4
 pyramid==1.10.4
 pyramid-debugtoolbar==4.6.1
 pyramid-deform==0.2
