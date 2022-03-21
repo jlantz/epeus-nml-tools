@@ -21,7 +21,7 @@ repoze.lru==0.7
 traktor-nml-utils @ git+https://github.com/jlantz/traktor-nml-utils@8b6ae53cf824d890f801e25a4350d931869320de
 translationstring==1.4
 venusian==3.0.0
-waitress==1.4.4
+waitress==2.1.1
 WebOb==1.8.6
 zope.deprecation==4.4.0
 zope.interface==5.1.0
